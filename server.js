@@ -72,6 +72,23 @@ employeeRoutes.route("/update/:id").post(function(req, res) {
   });
 });
 
+employeeRoutes.route("/delete/:id").get(function(req, res) {
+  Employee.findById(req.params.id, function(err, employee) {
+    if (!employee) {
+      res.status(404).send("ERROR: no data!");
+    } else {
+      employee
+        .remove()
+        .then(employee => {
+          res.json("Employee deleted successfully");
+        })
+        .catch(err => {
+          res.status(400).send("ERROR: unable to delete");
+        });
+    }
+  });
+});
+
 app.use("/employees", employeeRoutes);
 
 app.listen(PORT, function() {
