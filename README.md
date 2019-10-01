@@ -1,3 +1,3 @@
 ## Instructions
 
-Run <<mongod>>, followed with <<npm start>>, which fires nodemon server
+Run mongod, followed by npm start, which fires nodemon server
