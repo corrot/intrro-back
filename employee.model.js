@@ -13,6 +13,9 @@ let Employee = new Schema({
   },
   employee_address: {
     type: String
+  },
+  employee_add_date: {
+    type: String
   }
 });
 
